@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
+import heroBg from "@/assets/hero-bg.jpg";
 
 export const Hero = () => {
   const scrollToContact = () => {
@@ -21,8 +22,14 @@ export const Hero = () => {
       id="inicio"
       className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
     >
-      {/* Background decorativo */}
-      <div className="absolute inset-0 bg-gradient-to-br from-lavender-light/40 via-background to-cream/30" />
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      />
+      
+      {/* Overlay gradients */}
+      <div className="absolute inset-0 bg-gradient-to-br from-lavender-light/20 via-transparent to-cream/20" />
       <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-lavender/20 rounded-full blur-3xl" />
 

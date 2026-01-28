@@ -1,37 +1,42 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import testimonial1 from "@/assets/testimonial-1.jpg";
+import testimonial2 from "@/assets/testimonial-2.jpg";
+import testimonial3 from "@/assets/testimonial-3.jpg";
+import testimonial4 from "@/assets/testimonial-4.jpg";
+import testimonial5 from "@/assets/testimonial-5.jpg";
 
 const testimonials = [
   {
     name: "Maria S.",
     treatment: "Ansiedade",
     text: "Depois de anos lutando contra a ansiedade, finalmente encontrei paz. A Angela me ajudou a entender as raízes do meu problema e trabalhar isso de forma profunda. Hoje me sinto uma pessoa completamente diferente.",
-    initials: "MS",
+    photo: testimonial1,
   },
   {
     name: "João P.",
     treatment: "Tabagismo",
     text: "Fumei por 20 anos e já tinha tentado de tudo. Com apenas 3 sessões de hipnoterapia, consegui parar de fumar. Já faz 8 meses e não sinto vontade nenhuma de voltar. Incrível!",
-    initials: "JP",
+    photo: testimonial2,
   },
   {
     name: "Ana L.",
     treatment: "Fobia",
     text: "Tinha pavor de dirigir depois de um acidente. A Angela me ajudou a superar esse medo que me limitava tanto. Hoje dirijo tranquilamente e voltei a ter minha independência.",
-    initials: "AL",
+    photo: testimonial3,
   },
   {
     name: "Carlos R.",
     treatment: "Insônia",
     text: "Sofria de insônia há anos e estava exausto. Após o tratamento com a Angela, finalmente consigo dormir bem. Minha qualidade de vida melhorou 100%.",
-    initials: "CR",
+    photo: testimonial4,
   },
   {
     name: "Fernanda M.",
     treatment: "Compulsão Alimentar",
     text: "A hipnoterapia mudou minha relação com a comida. Consegui entender o porquê da compulsão e trabalhar isso. Perdi 15kg de forma natural e saudável.",
-    initials: "FM",
+    photo: testimonial5,
   },
 ];
 
@@ -90,10 +95,12 @@ export const Testimonials = () => {
                 </p>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
-                    <span className="font-serif font-bold text-primary text-lg">
-                      {testimonials[currentIndex].initials}
-                    </span>
+                  <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0">
+                    <img
+                      src={testimonials[currentIndex].photo}
+                      alt={testimonials[currentIndex].name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">
